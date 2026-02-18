@@ -1,0 +1,64 @@
+export interface PricingTier {
+  name: string;
+  monthlyPrice: number | null;
+  annualPrice: number | null;
+  description: string;
+  features: string[];
+  cta: string;
+  ctaHint?: string;
+  popular?: boolean;
+}
+
+export const pricingTiers: PricingTier[] = [
+  {
+    name: "Crew",
+    monthlyPrice: 12,
+    annualPrice: 10,
+    description: "For small crews getting started with live stage monitoring.",
+    features: [
+      "P2P Direct streaming",
+      "Up to 5 viewers",
+      "720p video quality",
+      "Live crew chat",
+      "3 color themes",
+      "Unlimited shows",
+    ],
+    cta: "Start Free Trial",
+    ctaHint: "14-day free trial · No credit card required",
+  },
+  {
+    name: "Production",
+    monthlyPrice: 39,
+    annualPrice: 33,
+    description: "For production teams that need scale and reliability.",
+    features: [
+      "Cloudflare SFU streaming",
+      "Up to 50 viewers",
+      "1080p video quality",
+      "Live crew chat",
+      "All 10 themes",
+      "Internet streaming + TURN relay",
+      "Email support",
+    ],
+    cta: "Start Free Trial",
+    ctaHint: "14-day free trial",
+    popular: true,
+  },
+  {
+    name: "Showtime",
+    monthlyPrice: 99,
+    annualPrice: 84,
+    description: "For large venues and professional productions.",
+    features: [
+      "Cloudflare SFU streaming",
+      "Up to 200 viewers",
+      "1080p video quality",
+      "Live crew chat + talkback",
+      "All 10 themes + custom branding",
+      "Internet streaming + TURN relay",
+      "Priority support + dedicated account manager",
+    ],
+    cta: "Start Free Trial",
+    ctaHint: "14-day free trial",
+  },
+];
