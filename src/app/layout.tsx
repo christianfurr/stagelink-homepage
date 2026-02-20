@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { GeistSans } from "geist/font/sans";
 import { Cormorant_Garamond } from "next/font/google";
 
@@ -55,6 +56,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${GeistSans.variable} ${cormorant.variable}`}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
