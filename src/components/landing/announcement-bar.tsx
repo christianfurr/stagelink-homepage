@@ -12,9 +12,7 @@ export function AnnouncementBar({ open, onDismiss }: AnnouncementBarProps) {
 
   return (
     <div className="fixed left-0 right-0 top-0 z-[60] flex items-center justify-center gap-4 border-b border-gold/50 bg-gold px-4 py-2.5 text-sm font-medium text-primary-foreground">
-      <span>
-        Early access — first 3 months free
-      </span>
+      <span>Early access</span>
       <button
         type="button"
         onClick={onDismiss}
