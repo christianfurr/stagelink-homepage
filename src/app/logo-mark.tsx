@@ -1,9 +1,16 @@
+import { CORMORANT_FONT_NAME } from "./og-font";
+
 /** Shared logo mark for icon.tsx, apple-icon.tsx, opengraph-image.tsx. Inline styles only (Satori). */
-export function LogoMark({ size }: { size: number }) {
-  const stroke = Math.max(2, Math.floor(size / 32));
-  const gap = Math.floor(size / 16);
-  const r = Math.floor(size * 0.22);
-  const dotR = Math.floor(size * 0.06);
+export function LogoMark({
+  size,
+  fontFamily = CORMORANT_FONT_NAME,
+}: {
+  size: number;
+  fontFamily?: string;
+}) {
+  const stroke = Math.max(1, Math.floor(size / 48));
+  const fontSize = Math.floor(size * 0.5);
+  const dotR = Math.floor(size * 0.08);
   return (
     <div
       style={{
@@ -14,39 +21,25 @@ export function LogoMark({ size }: { size: number }) {
         justifyContent: "center",
         backgroundColor: "#0C0A09",
         borderRadius: Math.floor(size / 6),
-        border: `${stroke}px solid rgba(201, 162, 39, 0.35)`,
+        border: `${stroke}px solid rgba(201, 162, 39, 0.4)`,
       }}
     >
-      <div
+      <span
         style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          gap,
+          color: "#C9A227",
+          fontSize,
+          fontWeight: 600,
+          fontFamily: `${fontFamily}, serif`,
+          letterSpacing: "-0.04em",
         }}
       >
-        <div
-          style={{
-            width: r * 2,
-            height: r * 2,
-            border: `${stroke}px solid #C9A227`,
-            borderRadius: "50%",
-          }}
-        />
-        <div
-          style={{
-            width: r * 2,
-            height: r * 2,
-            border: `${stroke}px solid #C9A227`,
-            borderRadius: "50%",
-          }}
-        />
-      </div>
+        SL
+      </span>
       <div
         style={{
           position: "absolute",
-          bottom: Math.floor(size * 0.12),
-          right: Math.floor(size * 0.12),
+          bottom: Math.floor(size * 0.1),
+          right: Math.floor(size * 0.1),
           width: dotR * 2,
           height: dotR * 2,
           borderRadius: "50%",

@@ -1,12 +1,14 @@
 import { ImageResponse } from "next/og";
 
 import { LogoMark } from "./logo-mark";
+import { CORMORANT_FONT_NAME, getCormorantFont } from "./og-font";
 
 export const runtime = "edge";
 export const alt = "Stage Link";
 export const size = { width: 1200, height: 630 };
 
-export default function OpenGraphImage() {
+export default async function OpenGraphImage() {
+  const fonts = await getCormorantFont();
   return new ImageResponse(
     (
       <div
@@ -35,7 +37,7 @@ export default function OpenGraphImage() {
             color: "#F5F0E8",
             fontSize: 72,
             fontWeight: 600,
-            fontFamily: "system-ui, sans-serif",
+            fontFamily: `${CORMORANT_FONT_NAME}, serif`,
             letterSpacing: "-0.02em",
             margin: 0,
             marginBottom: 16,
@@ -48,7 +50,7 @@ export default function OpenGraphImage() {
             color: "#A89B8C",
             fontSize: 32,
             fontWeight: 400,
-            fontFamily: "system-ui, sans-serif",
+            fontFamily: `${CORMORANT_FONT_NAME}, serif`,
             margin: 0,
             textAlign: "center",
             maxWidth: 800,
@@ -84,6 +86,6 @@ export default function OpenGraphImage() {
         </div>
       </div>
     ),
-    { ...size }
+    { ...size, fonts }
   );
 }
