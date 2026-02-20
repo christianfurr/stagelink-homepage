@@ -1,5 +1,7 @@
 import { ImageResponse } from "next/og";
 
+import { LogoMark } from "./logo-mark";
+
 export const runtime = "edge";
 export const alt = "Stage Link";
 export const size = { width: 1200, height: 630 };
@@ -21,27 +23,12 @@ export default function OpenGraphImage() {
       >
         <div
           style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
             width: 120,
             height: 120,
-            backgroundColor: "#1A1614",
-            borderRadius: 24,
             marginBottom: 48,
           }}
         >
-          <span
-            style={{
-              color: "#C9A227",
-              fontSize: 56,
-              fontWeight: 700,
-              fontFamily: "system-ui, sans-serif",
-              letterSpacing: "-0.04em",
-            }}
-          >
-            SL
-          </span>
+          <LogoMark size={120} />
         </div>
         <h1
           style={{
