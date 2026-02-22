@@ -7,6 +7,7 @@ import { Check } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { pricingTiers } from "@/data/pricing";
+import { SIGN_UP_URL } from "@/data/links";
 
 const containerVariants = {
   hidden: {},
@@ -167,7 +168,7 @@ export function Pricing() {
                   }`}
                   variant={isPopular ? "default" : "ghost"}
                 >
-                  <Link href="#">{tier.cta}</Link>
+                  <Link href={SIGN_UP_URL}>{tier.cta}</Link>
                 </Button>
                 {tier.ctaHint && (
                   <p className="mt-2.5 text-center text-[11px] text-muted-foreground/50">

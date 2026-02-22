@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
+import { SIGN_UP_URL } from "@/data/links";
 
 export function CtaBlock() {
   return (
@@ -55,14 +56,14 @@ export function CtaBlock() {
             asChild
             className="h-12 rounded-xl px-8 text-base font-semibold tracking-wide"
           >
-            <Link href="#">Start Free Trial</Link>
+            <Link href={SIGN_UP_URL}>Start Free Trial</Link>
           </Button>
           <Button
             asChild
             variant="outline"
             className="h-12 rounded-xl border-crimson/40 px-8 text-base font-semibold tracking-wide hover:bg-crimson/10 hover:border-crimson/60 hover:text-crimson"
           >
-            <Link href="#">Get Started Free</Link>
+            <Link href={SIGN_UP_URL}>Get Started Free</Link>
           </Button>
         </div>
       </motion.div>

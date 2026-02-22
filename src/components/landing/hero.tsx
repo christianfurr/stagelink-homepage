@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
 import { FakeAppUI } from "@/components/landing/fake-app-ui";
+import { SIGN_UP_URL } from "@/data/links";
 
 export function Hero() {
   const [streamingMode, setStreamingMode] = useState<"sfu" | "p2p">("sfu");
@@ -100,7 +101,7 @@ export function Hero() {
                 asChild
                 className="h-12 rounded-xl px-8 text-base font-semibold tracking-wide"
               >
-                <Link href="#">Start Free Trial</Link>
+                <Link href={SIGN_UP_URL}>Start Free Trial</Link>
               </Button>
               <Button
                 asChild

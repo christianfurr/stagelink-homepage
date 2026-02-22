@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SIGN_IN_URL, APP_URL, PRICING_URL } from "@/data/links";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -31,6 +32,21 @@ export function Footer() {
               <li>
                 <Link href="#pricing" className="text-sm text-foreground transition-colors hover:text-crimson">
                   Pricing
+                </Link>
+              </li>
+              <li>
+                <Link href={PRICING_URL} className="text-sm text-foreground transition-colors hover:text-crimson" target="_blank" rel="noopener noreferrer">
+                  App pricing
+                </Link>
+              </li>
+              <li>
+                <Link href={SIGN_IN_URL} className="text-sm text-foreground transition-colors hover:text-gold" target="_blank" rel="noopener noreferrer">
+                  Sign in
+                </Link>
+              </li>
+              <li>
+                <Link href={APP_URL} className="text-sm text-foreground transition-colors hover:text-gold" target="_blank" rel="noopener noreferrer">
+                  Open app
                 </Link>
               </li>
               <li>

@@ -13,6 +13,7 @@ import {
   SheetTitle,
   SheetClose,
 } from "@/components/ui/sheet";
+import { SIGN_UP_URL, SIGN_IN_URL } from "@/data/links";
 
 const SECTIONS = [
   { id: "how-it-works", label: "How it works" },
@@ -89,12 +90,18 @@ export function Nav({ hasAnnouncement = false }: NavProps) {
                 {label}
               </Link>
             ))}
+            <Link
+              href={SIGN_IN_URL}
+              className="text-sm text-muted-foreground transition-colors hover:text-gold"
+            >
+              Sign in
+            </Link>
             <Button
               asChild
               variant="secondary"
               className="h-10 rounded-xl px-5 text-sm font-semibold tracking-wide"
             >
-              <Link href="#">Get Started</Link>
+              <Link href={SIGN_UP_URL}>Get Started</Link>
             </Button>
           </div>
 
@@ -133,8 +140,16 @@ export function Nav({ hasAnnouncement = false }: NavProps) {
             ))}
             <div className="mt-4 border-t border-border pt-4">
               <SheetClose asChild>
+                <Link
+                  href={SIGN_IN_URL}
+                  className="block rounded-lg px-4 py-3 text-base text-foreground transition-colors hover:bg-gold/10 hover:text-gold"
+                >
+                  Sign in
+                </Link>
+              </SheetClose>
+              <SheetClose asChild>
                 <Button asChild variant="secondary" className="h-12 w-full rounded-xl">
-                  <Link href="#">Get Started</Link>
+                  <Link href={SIGN_UP_URL}>Get Started</Link>
                 </Button>
               </SheetClose>
             </div>
