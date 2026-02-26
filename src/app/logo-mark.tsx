@@ -4,9 +4,11 @@ import { CORMORANT_FONT_NAME } from "./og-font";
 export function LogoMark({
   size,
   fontFamily = CORMORANT_FONT_NAME,
+  transparent = false,
 }: {
   size: number;
   fontFamily?: string;
+  transparent?: boolean;
 }) {
   const stroke = Math.max(1, Math.floor(size / 48));
   const fontSize = Math.floor(size * 0.5);
@@ -19,9 +21,9 @@ export function LogoMark({
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "#0C0A09",
-        borderRadius: Math.floor(size / 6),
-        border: `${stroke}px solid rgba(201, 162, 39, 0.4)`,
+        backgroundColor: transparent ? "transparent" : "#0C0A09",
+        borderRadius: transparent ? 0 : Math.floor(size / 6),
+        border: transparent ? "none" : `${stroke}px solid rgba(201, 162, 39, 0.4)`,
       }}
     >
       <span

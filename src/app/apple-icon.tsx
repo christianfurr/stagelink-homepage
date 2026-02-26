@@ -9,5 +9,8 @@ export const contentType = "image/png";
 
 export default async function AppleIcon() {
   const fonts = await getCormorantFont();
-  return new ImageResponse(<LogoMark size={180} />, { ...size, fonts });
+  return new ImageResponse(
+    <LogoMark size={180} transparent />,
+    { ...size, fonts }
+  );
 }
